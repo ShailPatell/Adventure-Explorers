@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <form action = '/events' method = 'POST' class="new-form">
+       
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+
+        
+        <label for="category">Select a category:</label>
+
+            <select name="category" id="category">
+            <option value="Hiking">Hiking</option>
+            <option value="Trekking">Trekking</option>
+            </select>
+
+        <label for="details">Details</label>
+        <input type="details" id="details" name="details">
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate">
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate">
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location">
+
+        <br>
+        <br>
+
+            <p>Upload a picture</p>
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image"><br>
+            <span>* Max allowed file size is 2MB</span>
+            <br><br>
+        
+        <br>
+        <img src="<%= typeof image !== 'undefined'? image: ''%>" style="width: 100%">
+        
+        <input type="submit" value="Submit">   
+    </form>
+
+    </div>
+    <%- include('../partials/footer.ejs')%>

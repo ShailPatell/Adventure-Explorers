@@ -1,0 +1,36 @@
+<%- include ('../partials/header.ejs') %>
+<div class="content">
+    <h1><%= event.title %></h1>
+    <small><%= event.category %></small> <br> <br>
+    <i><%= event.details %></i> <br>
+    <h4>Start Date: <%= event.startDate %></h4>
+    <h4>End Date: <%= event.endDate %></h4>
+    <small>Adventure hosted by <%= event.host.firstName + ' ' + event.host.lastName %></small><br>
+    <small>Located at <%= event.location %></small> <br>
+
+    <% if (user && user != event.host._id) { %>
+        <form method="POST" action="/events/<%= event.id %>/rsvp">
+            <button type="submit" name="status" value="YES">RSVP YES</button>
+            <button type="submit" name="status" value="NO">RSVP NO</button>
+            <button type="submit" name="status" value="MAYBE">RSVP MAYBE</button>
+        </form>
+    <% } %>
+
+    <% if (event.rsvps && event.rsvps.length > 0) { %>
+        <p>Total RSVPs (YES): <%= event.rsvps.filter(rsvp => rsvp.status === 'YES').length %></p>
+    <% } else { %>
+        <p>No RSVPs yet.</p>
+        <a href="/events/<%= event.id %>/rsvp">RSVP to this event</a>
+    <% } %>
+
+    <% if (user == event.host._id) { %>
+        <form>
+            <button type='submit' formmethod="GET" formaction="/events/<%= event.id %>/edit">Edit</button>
+            <button type='submit' formmethod="POST" formaction="/events/<%= event.id %>?_method=DELETE">Delete</button>
+        </form>
+    <% } %>
+
+    <img src="<%= event.image %>" alt="">
+</div>
+
+<%- include('../partials/footer.ejs') %>

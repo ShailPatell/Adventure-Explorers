@@ -1,0 +1,17 @@
+<%- include ('../partials/header.ejs') %>
+<div class="content">
+
+<%if(events.length){%>
+    <h1>Select an adventure to view</h1>
+    <br>
+    <%events.forEach(event=>{%>
+     <a href="/events/<%=event.id%>"><p><%= event.title%></p></a>
+     <%});
+} else {%>
+    <p>There are no Adventures to display.</p>
+<%}%>
+
+</div>
+
+    
+<%- include('../partials/footer.ejs') %>

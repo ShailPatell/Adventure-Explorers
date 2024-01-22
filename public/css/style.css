@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      text-align: center;
+  
+    }
+  
+  nav {
+    padding: .5rem;
+    color: white;
+    background-color: rgb(80, 120, 212);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav h1{
+    align-self: center;
+  }
+  
+  nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+   
+   }
+  
+  .content {
+      padding-left: 1rem;
+      padding-top: 1rem;
+    }
+  
+  h3, h4, p {
+    margin-bottom: 1rem;
+  }
+  
+  .content a{
+    text-decoration: none;
+    color: rgb(31, 100, 19);
+  }
+  
+  footer {
+      color: white;
+      background-color: rgb(135, 54, 248);
+      text-align: center;
+      padding: 1rem;
+  }
+  
+  #event{
+   width: 50%;
+   margin: 1rem 0;
+  }
+  
+  
+  input, textarea, button{
+    font: inherit;
+  }
+  
+  .new-form {
+    display: grid;
+    grid-template-columns: 60px 250px;
+    row-gap: 0.5rem;
+  }
+
+  .new-form input[type="submit"] {
+    width: 70px;
+    padding: 0.2em 0;
+    grid-column: 2/3;
+    justify-self: end;
+  }
+  
+  button {
+    width: 60px;
+    
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

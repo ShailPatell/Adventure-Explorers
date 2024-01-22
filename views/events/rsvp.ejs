@@ -1,0 +1,18 @@
+<%- include ('../partials/header.ejs') %>
+<div class="content">
+
+    <h1>RSVP for <%=event.title %></h1>
+    
+    <form action="/events/<%=event.id%>/rsvp" method="post">
+        <label for="status">Select RSVP status:</label>
+        <select name="status" id="status">
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
+            <option value="MAYBE">Maybe</option>
+        </select>
+        <button type="submit">Submit RSVP</button>
+    </form>
+
+</div>
+
+<%- include('../partials/footer.ejs') %>
